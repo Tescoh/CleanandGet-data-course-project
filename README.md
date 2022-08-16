@@ -30,4 +30,4 @@
 
         group the resulting dataset by Subject and Activity and then summarize across all other variables by mean and assign to "second_tidy"
 
-        write the "first_tidy" and "second_tidy" tibble objects into .csv files
+        write the "first_tidy" and "second_tidy" tibble objects into .txt files

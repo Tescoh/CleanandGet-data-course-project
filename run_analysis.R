@@ -25,6 +25,6 @@ activity_names <- c("1"="WALKING","2"="WALKING_UPSTAIRS",
 first_tidy$Activity <- str_replace_all(first_tidy$Activity, activity_names)
 second_tidy <- first_tidy %>% group_by(Subject, Activity) %>% 
         summarise(across(everything(), mean))
-write_csv(second_tidy, ".\\second_tidy.csv")
-write_csv(first_tidy, ".\\first_tidy.csv")
+write.table(second_tidy, ".\\second_tidy.txt", row.names = F)
+write.table(first_tidy, ".\\first_tidy.txt", row.names = F)
         
