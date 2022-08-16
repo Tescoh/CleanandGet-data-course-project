@@ -1,3 +1,4 @@
+setwd("C:/Users/hp/Desktop/COURSERA DATA SCIENCE")
 train_set <- read.table("./UCI HAR Dataset/train/X_train.txt")
 test_set <- read.table("./UCI HAR Dataset/test/X_test.txt")        
 subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")      
@@ -24,4 +25,6 @@ activity_names <- c("1"="WALKING","2"="WALKING_UPSTAIRS",
 first_tidy$Activity <- str_replace_all(first_tidy$Activity, activity_names)
 second_tidy <- first_tidy %>% group_by(Subject, Activity) %>% 
         summarise(across(everything(), mean))
+write_csv(second_tidy, ".\\second_tidy.csv")
+write_csv(first_tidy, ".\\first_tidy.csv")
         
